@@ -16,7 +16,7 @@ BETA = (1/0.2)**2
 ALPHA = (10e-6) # Bishop usa alpha = 5e-3
 
 
-def posterior(t, Phi, alpha = ALPHA, beta = BETA):
+def posterior(t, Phi, alpha=ALPHA, beta=BETA):
     S_N_inv = alpha * np.eye(Phi.shape[1]) + beta * Phi.T.dot(Phi)
     S_N = np.linalg.inv(S_N_inv)
     m_N = beta * S_N.dot(Phi.T).dot(t)
